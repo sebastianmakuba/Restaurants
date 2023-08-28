@@ -6,8 +6,8 @@ from lib.review import Review
 class TestReview(unittest.TestCase):
 
     def setUp(self):
-        self.customer = Customer("John", "Doe")
-        self.restaurant = Restaurant("Delicious Eats")
+        self.customer = Customer("Sebastian", "Makuba")
+        self.restaurant = Restaurant("Burger King")
         self.review = Review(self.customer, self.restaurant, 4)
 
     def test_review_attributes(self):
