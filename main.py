@@ -24,12 +24,29 @@ customer2.add_review(restaurant1, 5)
 print("Customer 1's full name:", customer1.full_name())
 print("Customer 2's family name:", customer2.cust_family_name())
 
-print("All customers:", Customer.all())
-print("All restaurants:", Restaurant.all())
-print("All reviews:", Review.all())
 
-print("Restaurant 1's reviews:", restaurant1.rest_reviews())
-print("Restaurant 1's customers:", restaurant1.rest_customers())
+print('All Customers:')
+for customer in Customer.all():
+    print(customer.full_name())
+
+# print("All restaurants:", Restaurant.all())
+print("\nAll restaurants:")
+for restaurant in Restaurant.all():
+    print(restaurant.name)
+
+# print("All reviews:", Review.all())
+print("\nAll reviews:")
+for review in Review.all():
+    print(f"Customer: {review.customer.full_name()}, Restaurant: {review.restaurant.name}, Rating: {review.rating}")
+
+# print("Restaurant 1's reviews:", restaurant1.rest_reviews())
+print("\nRestaurant 1's reviews:")
+for review in restaurant1.reviews:
+    print(f"Customer: {review.customer.full_name()}, Rating: {review.rating}")
+# print("Restaurant 1's customers:", restaurant1.rest_customers())
+print("\nRestaurant 1's customers:")
+for customer in restaurant1.rest_customers():
+    print(customer.full_name())
 
 print("Customer 1's num reviews:", customer1.num_reviews())
 print("Customer with full name 'Jane Smith':", Customer.find_by_name("Jane Smith"))
