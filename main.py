@@ -49,7 +49,18 @@ for customer in restaurant1.rest_customers():
     print(customer.full_name())
 
 print("Customer 1's num reviews:", customer1.num_reviews())
-print("Customer with full name 'Jane Smith':", Customer.find_by_name("Jane Smith"))
-print("Customers with given name 'John':", Customer.find_all_by_given_name("John"))
+# print("Customer with full name 'Sebastian Makuba':", Customer.find_by_name("Sebastian Makuba"))
+print("\nCustomer with full name 'Sebastian Makuba':")
+fullname = Customer.find_by_name("Sebastian Makuba")
+if fullname:
+    print(fullname.full_name())
+else:
+    print("Customer not found")
+
+print("\nCustomers with given name 'Sebastian':")
+search_fullname = Customer.find_all_by_given_name("Sebastian")
+for customer in search_fullname:
+    print(customer.full_name())
+# print("Customers with given name 'Sebastian':", Customer.find_all_by_given_name("Sebastian"))
 
 print("Restaurant 1's average star rating:", restaurant1.average_star_rating())
